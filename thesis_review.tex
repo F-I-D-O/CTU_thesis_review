@@ -54,13 +54,13 @@
 
 % How demanding was the assigned project? Grade is A-E.
 \AssignmentTable{A}{
-  The assignment seems demanding. The combination of signal analysis and reproducible research software development seems to be challenging. Each of those topics would be enough for a Bachelor thesis in my opinion.
+  The assignment is demanding. It combines signal analysis with reproducible research software development, and either topic alone would be sufficient for a Bachelor thesis in my opinion.
 }
 \vspace{0.5cm}
 
 % How well does the thesis fulfil the assigned task? Have the primary goals been achieved? Which assigned tasks have been incompletely covered, and which parts of the thesis are overextended? Justify your answer. Grade is A-D.
 \FullfilmentTable{C}{
-  The single main goal from the thesis assignment is "to analyse experimental data about location and signal strength from the flight of autonomous helicopters with the focus on reproducible research principles." In my oppinion, this goal has been achieved with the exception of the "reproducible research principles". From the four sub-goals listed in the assignment, all seems to be achieved, but all of them only partially. Therefore, despite I see the amount of work done as significant, I cannot say that the goals have been fully achieved. 
+  The main goal of the assignment, "to analyse experimental data about location and signal strength from the flight of autonomous helicopters with the focus on reproducible research" was fullfiled, except for the "reproducible research principles" part. The four sub-goals listed in the assignment also have been addressed, but only partially. Therefore, despite the significant amount of work done, I cannot say that the goals were fully achieved.
 }
 \vspace{0.5cm}
  
@@ -69,32 +69,33 @@
 % SUPERVISOR:
 % Assess whether the student had a positive approach, whether the time limits were met, whether the conception was regularly consulted and whether the student was well prepared for the consultations. Assess the student’s ability to work independently. Grade is A-F.
 \ActivityMethodologyTable{B}{
-  The methodology used for the signal analysis seems correct, which is supported by the results. However, the choices for the software implementation are questionable. One of the goals of the thesis is to "Discuss existing tools for reproducible research support and, if necessary, propose and implement a new system." I would inspect the Section 2.5 to provide a clear story that supports the necessity of creating a new system, and maybe the software choices, but there is none. 
+  The signal-analysis methodology seems correct and is supported by the results. However, the software implementation choices are questionable. One thesis goal is to "Discuss existing tools for reproducible research support and, if necessary, propose and implement a new system." I would expect Section 2.5 to justify the need for a new system and explain the software choices, but it does not.
 }
 
 \vspace{0.5cm}
 
 % Is the thesis technically sound? How well did the student employ expertise in his/her field of study? Does the student explain clearly what he/she has done? Grade is A-F.
 \TechnicalTable{C}{
-  The thesis is technically sound, and the student seems to have a good grip of the topic of the ranging methods. However, there are some flaws in other sections: Section 2.5.2 use confusing terminology, and seems out of place in the thesis. The remaining sections (2.5.3 to 2.5.5) seems shallow and incomplete. Another flaw is the machine learning implementation. While the test data are held out for model training, they are used for hyperparameter (k) tuning, which makes the results even more questionable than the thesis admits. Finally, the limitations described in section 6.2.1 are quite significant, and their justification is not clear. 
+  The thesis is technically sound, and the student seems to understand ranging methods well. However, Section 2.5.2 uses confusing terminology and seems out of place, while Sections 2.5.3 to 2.5.5 are shallow and incomplete. Another issue is the machine learning evaluation: although the test data are held out during model training, they are used for hyperparameter ($k$) tuning, making the reported results more even questionable than the thesis admits. Finally, the limitations described in Section 6.2.1 are significant and not clearly justified.
 }
 \vspace{0.5cm}
 
 % Are formalisms and notations used properly? Is the thesis organized in a logical way? Is the thesis sufficiently extensive? Is the thesis well-presented? Is the language clear and understandable? Is the English satisfactory? Grade is A-F
 \FormalTable{B}{
-  All the math and notation seems fine. The language is clear and understandable, with only a few minor typos. One thing I suggest for the future is reduce the use of passive voice. The only problem is the organization, where some of the paragraphs are not in the right place (e.g., the second half of Section 2.2 is clearly not a related work)}
+  The mathematics and notation are mostly fine. The language is clear and understandable, with only a few minor typos. For future work, I suggest reducing the use of passive voice. The main weakness is organization: some paragraphs are misplaced, e.g., the second half of Section 2.2 is clearly not related work.
+}
 \vspace{0.5cm}
 
 % Does the thesis make adequate reference to earlier work on the topic? Was the selection of sources adequate? Is the student’s original work clearly distinguished from earlier work in the field? Do the bibliographic citations meet the standards? Grade is A-F
 \SourcesTable{C}{
-  Overall, the number and quality of references seems good. What I think is missing is rich integration of the references in the related work section. This section contains only a small number of references, and some claims are not supported by any reference (e.g., Section 2.1).
+  Overall, the number and quality of references seem good. What is missing is deeper integration of the references in the related work section. This section contains only a small number of references, and some claims are unsupported (e.g., Section 2.1).
 }
 
 \vspace{0.5cm}
 
 % Comment on the overall quality of the thesis, its novelty and its impact on the field, its strengths and weaknesses, the utility of the solution that is presented, the theoretical/formal level, the student’s skillfulness, etc.
 \AdditionalCommentsTable{
-  I would expect a thesis with the goal of reproducible research to be accompanied by a public repository for both the code and the data. Additionally, the images of the GUI in Section 6 are unreadable.
+  I would expect a thesis focused on reproducible research to include a public repository for both code and data. Additionally, the GUI images in Section 6 are unreadable.
 }
 
 \end{center}
@@ -104,19 +105,22 @@
 % Summarize your opinion on the thesis and explain your final grading.
 % \newline
 
-Considering the overall challenging goals, I grade the thesis \textbf{\generalgrade{B}}
+Considering the overall challenging goals, I grade the thesis \textbf{\generalgrade{B}}.
 
 \vspace{0.5cm}
 
-Questions 1: Even after improvements achieved by this thesis, the abolute error seems stil to high (in meters), which is a limitation acknowledged by the in the conclusion. Do you see further improvement options with a potential to reduce the error at least by an order of magnitude? Or is it rather a fundamental limitation of RSSI, and a different approach should be considered?
+Question 1: Even after the improvements achieved in this thesis, the absolute error still seems too high, in meters, which is a limitation acknowledged in the conclusion. 
+Do you see further improvement options with the potential to reduce the error by at least an order of magnitude? 
+Or is this a fundamental limitation of RSSI, and we should consider a different approach?
 
 \vspace{0.5cm}
 
-Question 2: One of the goals of the thesis was to "following the reproducible research principles". However, the provided code targets a very small audience: Windows as the only supported platform, dependency on uv, or implementation as a VSCode plugin. As the logic behind these choices is not described in the thesis, I would like to ask for the strategy you have used to decide for these technologies that significantly limit the usability, and in consequence, the reproducibility of the research?
+Question 2: One thesis goal was to follow reproducible research principles.
+However, the provided code targets a very narrow audience: Windows is the only supported platform, \texttt{uv} is required, and the implementation depends on a VSCode plugin. Since the rationale behind these choices is not described in the thesis, what strategy did you use to choose technologies for your implementation?
 
 \vspace{0.5cm}
 \textbf{\ReviewDate} \today 
 
-\vspace{0.5cm}
+\vspace{0.3cm}
 \textbf{\ReviewSignature}
 \end{document}
